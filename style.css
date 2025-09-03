@@ -1,0 +1,327 @@
+<style>
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background: #faf7f2;
+      color: #333;
+    }
+    h1, h2 {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .hero {
+      display: flex;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .hero img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid #2f7361;
+      margin-right: 3rem;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      margin: 0 0 1rem;
+    }
+    .hero-content ul {
+      list-style: none;
+      padding: 0;
+    }
+    .hero-content li::before {
+      content: "• ";
+      color: #e96e3a;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 2rem;
+      background: #2f7361;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #e96e3a;
+    }
+
+    /* Logo Strip */
+    .logo-strip {
+      overflow: hidden;
+      background: #fff;
+      padding: 1rem 0;
+      border-top: 2px solid #eee;
+      border-bottom: 2px solid #eee;
+    }
+    .logo-track {
+      display: flex;
+      animation: scroll 15s linear infinite;
+    }
+    .logo-track img {
+      height: 40px;
+      margin: 0 3rem;
+    }
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* About Me */
+    .about {
+      display: flex;
+      align-items: center;
+      padding: 4rem 2rem;
+    }
+    .about img {
+      width: 200px;
+      border-radius: 20px;
+      margin-right: 2rem;
+    }
+    .about-text {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.5rem;
+    }
+/* My Work */
+.my-work {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #faf7f2; /* matches artistic portfolio */
+}
+
+.my-work h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: #2f7361;
+  margin-bottom: 2rem;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.work-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+
+.work-card:hover {
+  transform: translateY(-5px);
+}
+
+.work-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.btn-small {
+  padding: 0.6rem 1.2rem;
+  background: #e96e3a;
+  color: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.btn-small:hover {
+  background: #2f7361;
+}
+
+/* skill section */
+.skills {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #fff;
+}
+
+.skills h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: #2f7361;
+  margin-bottom: 2rem;
+}
+
+.skills-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.skill-card {
+  background: #faf7f2;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 180px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+}
+
+.skill-card i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.skill-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Colors for Icons */
+.skill-card .fa-html5 { color: #e44d26; }
+.skill-card .fa-css3-alt { color: #264de4; }
+.skill-card .fa-js { color: #f7df1e; }
+
+    /* Services */
+    .pricing {
+  display: flex;
+  justify-content: space-around;
+  padding: 4rem 2rem;
+  gap: 3rem;
+}
+
+.pricing-column {
+  width: 45%;
+}
+
+.pricing-column h2 {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 1rem;
+  color: #2f7361;
+}
+
+.pricing-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pricing-column li {
+  background: #fff;
+  margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.pricing-column li:hover {
+  transform: translateX(5px);
+}
+
+.btn-small {
+  padding: 0.5rem 1rem;
+  background: #e96e3a;
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.btn-small:hover {
+  background: #2f7361;
+}
+
+
+    /* Testimonials */
+    .testimonials {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem;
+  background: #eaf6fb; /* light blue background like your image */
+  flex-wrap: wrap;
+}
+
+.testimonial-card {
+  background: #fff;
+  width: 300px;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.testimonial-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.testimonial-card .role {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.testimonial-card .review {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.testimonial-card .stars {
+  color: #f9c806; /* golden stars */
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-card .date {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #2f7361;
+      color: white;
+    }
+    .socials a {
+      margin: 0 1rem;
+      color: white;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .socials a:hover {
+      color: #e96e3a;
+    }
+  </style>
